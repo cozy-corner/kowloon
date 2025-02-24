@@ -11,7 +11,7 @@ lazy val commonSettings = Seq(
         "-deprecation",
         "-feature",
         "-language:higherKinds",
-        "-Ykind-projector:underscores"
+        "-Xkind-projector:underscores"
     ),
     libraryDependencies ++= Seq(
         "org.typelevel" %% "cats-effect" % "3.5.7",

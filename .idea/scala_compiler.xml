@@ -3,12 +3,20 @@
   <component name="ScalaCompilerConfiguration">
     <option name="separateProdTestSources" value="true" />
     <profile name="sbt 1" modules="kowloon,kowloon.main,kowloon.test,majong,majong.main,majong.test,root,root.api,root.application,root.kowloon-api,root.kowloon-core,root.kowloon-infra,root.kowloon-infra.main,root.kowloon-infra.test,root.main,root.test" />
-    <profile name="sbt 2" modules="root.api.main,root.api.test,root.application.main,root.application.test,root.kowloon-api.main,root.kowloon-api.test,root.kowloon-core.main,root.kowloon-core.test">
+    <profile name="sbt 2" modules="root.kowloon-api.main,root.kowloon-api.test">
       <option name="higherKinds" value="true" />
       <option name="deprecationWarnings" value="true" />
       <option name="featureWarnings" value="true" />
       <parameters>
         <parameter value="-Ykind-projector:underscores" />
+      </parameters>
+    </profile>
+    <profile name="sbt 3" modules="root.api.main,root.api.test,root.application.main,root.application.test,root.kowloon-core.main,root.kowloon-core.test">
+      <option name="higherKinds" value="true" />
+      <option name="deprecationWarnings" value="true" />
+      <option name="featureWarnings" value="true" />
+      <parameters>
+        <parameter value="-Xkind-projector:underscores" />
       </parameters>
     </profile>
   </component>
