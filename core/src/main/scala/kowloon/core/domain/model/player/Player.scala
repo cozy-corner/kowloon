@@ -1,4 +1,4 @@
-package kowloon.core.model.player
+package kowloon.core.domain.model.player
 
 import java.util.UUID
 
