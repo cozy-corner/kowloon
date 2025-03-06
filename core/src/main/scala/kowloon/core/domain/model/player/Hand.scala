@@ -1,7 +1,6 @@
-package kowloon.core.domain.model.hand
+package kowloon.core.domain.model.player
 
 import kowloon.core.domain.model.tile.Tile
-import kowloon.core.domain.model.hand.Meld
 
 case class Hand(
     concealed: Vector[Tile],
