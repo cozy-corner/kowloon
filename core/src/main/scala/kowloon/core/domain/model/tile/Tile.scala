@@ -26,4 +26,9 @@ object Tile {
 
   def createDragon(dragon: TileType.Dragon): Tile =
     Tile(dragon, None)
+
+  def isTerminal(tile: Tile): Boolean = tile match {
+    case Tile(_: TileType.Suit, Some(1 | 9)) => true
+    case _                                   => false
+  }
 }
