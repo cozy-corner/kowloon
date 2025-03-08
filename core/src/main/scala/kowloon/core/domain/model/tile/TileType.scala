@@ -1,11 +1,17 @@
-package kowloon.core.domain.model.tile
-
+package kowloon.core.domain.model.tile 
 sealed trait TileType
 object TileType {
   // 数牌（1-9のみ有効）
-  sealed trait Suit extends TileType{
+  sealed trait Suit extends TileType {
     def number: Int
     require(number >= 1 && number <= 9, "数牌は1〜9でなければなりません")
+  }
+  object Suit {
+    case class Character(number: Int) extends Suit
+
+    case class Dot(number: Int) extends Suit
+
+    case class Bamboo(number: Int) extends Suit
   }
 
   // 風牌（東南西北）
