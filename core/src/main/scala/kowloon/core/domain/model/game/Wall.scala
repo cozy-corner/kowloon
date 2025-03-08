@@ -33,7 +33,6 @@ object Wall {
     assert(tiles.count(tile => tile.tileType.isInstanceOf[TileType.Dragon]) == 12, "三元牌の数が不正です")
   }
 
-  // 例外をスローする可能性のある初期化処理
   def initialize(shuffle: Vector[Tile] => Vector[Tile]): Wall = {
     val allTiles = generateAllTiles()
     assertValidTileCount(allTiles)
@@ -85,12 +84,8 @@ object Wall {
   }
 }
 
-trait WallError {
-  def message: String
-}
+trait WallError {}
 
 object WallError {
-  case object DoraNotFound extends WallError {
-    val message = "ドラ表示牌がありません"
-  }
-}
+  case object DoraNotFound extends WallError
+
