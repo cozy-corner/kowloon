@@ -89,3 +89,4 @@ trait WallError {}
 object WallError {
   case object DoraNotFound extends WallError
 
+}
