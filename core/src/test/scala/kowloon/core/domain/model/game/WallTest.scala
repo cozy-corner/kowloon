@@ -24,7 +24,7 @@ class WallTest extends AnyFunSuiteLike {
 
     val (drawnTile, newWall) = drawResult.get
     assert(newWall.liveTiles.length == initialLiveTileCount - 1)
-    assert(newWall.liveTiles.count(_ == drawnTile) == 3)
+    assert(newWall.liveTiles.count(_ == drawnTile) == 3) // 4 of each tile in the wall in mahjong
   }
 
   test("Wall should support multiple draws") {
