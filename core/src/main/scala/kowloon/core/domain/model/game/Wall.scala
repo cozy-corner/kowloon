@@ -9,7 +9,8 @@ final case class Wall private (
 ) {
   // ツモ処理（TODO: 王牌からの補充ロジック）
   def draw(): Option[(Tile, Wall)] = liveTiles.headOption.map { tile =>
-    val newWall = copy(liveTiles = liveTiles.tail)
+    val newLiveTiles = liveTiles.tail
+    val newWall = copy(liveTiles = newLiveTiles)
     (tile, newWall)
   }
 
