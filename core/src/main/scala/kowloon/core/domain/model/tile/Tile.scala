@@ -4,7 +4,6 @@ final case class Tile private (
     tileType: TileType,
     number: Option[Int] = None
 ) {
-  // バリデーションロジック
   require(
     (tileType, number) match {
       case (_: TileType.Suit, Some(n))                  => n >= 1 && n <= 9
@@ -16,7 +15,6 @@ final case class Tile private (
 }
 
 object Tile {
-  // スマートコンストラクタ
   def createSuit(suitType: TileType.Suit, number: Int): Either[String, Tile] =
     if (number >= 1 && number <= 9) Right(Tile(suitType, Some(number)))
     else Left("数牌の数字は1〜9でなければなりません")
