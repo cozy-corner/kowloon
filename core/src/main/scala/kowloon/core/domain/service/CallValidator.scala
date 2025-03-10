@@ -4,23 +4,34 @@ import kowloon.core.domain.model.game.DiscardPile
 import kowloon.core.domain.model.player.Player
 import kowloon.core.domain.model.tile.Tile
 
-// TODO 抽象化する
-class CallValidator {
-  def canPon(
+trait CallValidator {
+  def canCall(
       targetTile: Tile,
       player: Player,
       discardPile: DiscardPile
-  ): Boolean = ???
+  ): Boolean
+}
 
-  def canChii(
+object PonValidator extends CallValidator {
+  override def canCall(
       targetTile: Tile,
       player: Player,
       discardPile: DiscardPile
-  ): Boolean = ???
+  ): Boolean = false
+}
 
-  def canKan(
+object ChiiValidator extends CallValidator {
+  override def canCall(
       targetTile: Tile,
       player: Player,
       discardPile: DiscardPile
-  ): Boolean = ???
+  ): Boolean = false
+}
+
+object KanValidator extends CallValidator {
+  override def canCall(
+      targetTile: Tile,
+      player: Player,
+      discardPile: DiscardPile
+  ): Boolean = false
 }
