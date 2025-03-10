@@ -68,14 +68,14 @@ class TileTest extends AnyFunSuiteLike {
     val east = Tile.createWind(TileType.Wind.East)
     val white = Tile.createDragon(TileType.Dragon.White)
 
-    assert(Tile.isTerminal(character1))
-    assert(!Tile.isTerminal(character5))
-    assert(Tile.isTerminal(character9))
-    assert(Tile.isTerminal(bamboo1))
-    assert(Tile.isTerminal(bamboo9))
-    assert(Tile.isTerminal(dot1))
-    assert(Tile.isTerminal(dot9))
-    assert(!Tile.isTerminal(east))
-    assert(!Tile.isTerminal(white))
+    assert(character1.isTerminal)
+    assert(!character5.isTerminal)
+    assert(character9.isTerminal)
+    assert(bamboo1.isTerminal)
+    assert(bamboo9.isTerminal)
+    assert(dot1.isTerminal)
+    assert(dot9.isTerminal)
+    assert(!east.isTerminal)
+    assert(!white.isTerminal)
   }
 }

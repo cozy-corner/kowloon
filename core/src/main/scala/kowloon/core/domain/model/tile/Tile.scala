@@ -12,6 +12,10 @@ final case class Tile private (
     },
     "牌の組み合わせが不正です"
   )
+  def isTerminal: Boolean = this match {
+    case Tile(_: TileType.Suit, Some(1 | 9)) => true
+    case _                                   => false
+  }
 }
 
 object Tile {
@@ -24,9 +28,4 @@ object Tile {
 
   def createDragon(dragon: TileType.Dragon): Tile =
     Tile(dragon, None)
-
-  def isTerminal(tile: Tile): Boolean = tile match {
-    case Tile(_: TileType.Suit, Some(1 | 9)) => true
-    case _                                   => false
-  }
 }
